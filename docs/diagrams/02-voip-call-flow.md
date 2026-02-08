@@ -53,8 +53,8 @@ sequenceDiagram
     Note over App,PSTN: Media Stream (RTP/SRTP)
     
     rect rgb(200, 255, 200)
-        App<->>FreeSWITCH: Encrypted Voice (SRTP)<br/>AES-128/256
-        FreeSWITCH<->>PSTN: Voice Media (RTP)<br/>Via SIP Trunk
+        Note over App,FreeSWITCH: Encrypted Voice (SRTP)<br/>AES-128/256
+        Note over FreeSWITCH,PSTN: Voice Media (RTP)<br/>Via SIP Trunk
     end
     
     Note over App,PSTN: Call in Progress

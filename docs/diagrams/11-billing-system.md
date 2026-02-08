@@ -184,7 +184,6 @@ sequenceDiagram
     
     alt Sufficient Balance
         Wallet-->>Laravel: 9a. Balance OK
-        deactivate Wallet
         
         Laravel->>Laravel: 10a. Create Call Record<br/>Status: initiated
         
@@ -202,13 +201,11 @@ sequenceDiagram
         
         Laravel->>Wallet: 15a. Deduct Amount
         
-        activate Wallet
         Wallet->>DB: 16a. Update Balance<br/>$25.00 - $0.05
         
         Wallet->>DB: 17a. Create Transaction<br/>Type: debit, Amount: $0.05
         
         Wallet-->>Laravel: 18a. Balance Updated
-        deactivate Wallet
         
         Laravel->>DB: 19a. Update Call Record<br/>Status: completed, Cost: $0.05
         
@@ -216,10 +213,11 @@ sequenceDiagram
         
     else Insufficient Balance
         Wallet-->>Laravel: 9b. Insufficient Balance
-        deactivate Wallet
         
         Laravel-->>App: 10b. Error: Low Balance<br/>Please recharge
     end
+    
+    deactivate Wallet
     
     deactivate Laravel
 ```
