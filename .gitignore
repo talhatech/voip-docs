@@ -1,0 +1,21 @@
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.log
+
+# Ignore brain/artifacts directory (local AI assistant files)
+.gemini/
+
+/docs/markdown/*
+/docs/word/*
